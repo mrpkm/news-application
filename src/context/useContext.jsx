@@ -32,7 +32,7 @@ const CostumeItemContext = ({ children }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://newsapi.org/v2/top-headlines?country=us&apiKey=3a7838dde2f640f088f9eb9ab23b375f"
+          "https://newsapi.org/v2/top-headlines?country=us&apiKey=f77ec84d231f4804a29e2a649e005295"
         );
 
         if (response.ok) {
