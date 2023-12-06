@@ -1,0 +1,42 @@
+.girdbtn {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 3%;
+}
+.conFlex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.conGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+}
+.active {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.active img {
+  width: 50%;
+}
+
+.addFav {
+  color: red;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 5px;
+}
