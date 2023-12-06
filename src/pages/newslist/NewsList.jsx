@@ -10,13 +10,13 @@ import { useNavigate } from "react-router-dom";
 import { useValue } from "../../context/useContext";
 import { FaHeart } from "react-icons/fa6";
 
-const NewsList = ({ grid }) => {
+const NewsList = () => {
   const navigate = useNavigate();
 
   const nextPage = (id) => {
     navigate(`/${id}`);
   };
-  const { newsApi, addFav } = useValue();
+  const { newsApi, addFav, grid } = useValue();
 
   
 

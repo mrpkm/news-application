@@ -26,7 +26,7 @@ const CostumeItemContext = ({ children }) => {
   const [newsApi, setNewsApi] = useState([]);
   const [favs, setFavs] = useState([]);
   const [user, setUser] = useState();
-  //   console.log(favs);
+  const [grid, setGrid] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,10 +52,6 @@ const CostumeItemContext = ({ children }) => {
     fetchData();
   }, []);
 
-  //   const addFav = (news) => {
-  //     setFavs(news);
-  //   };
-
   const addFav = async (news) => {
     const customId = (Number.MAX_SAFE_INTEGER - Date.now()).toString();
     try {
@@ -67,6 +63,7 @@ const CostumeItemContext = ({ children }) => {
           description: news.description,
           urlToImage: news.urlToImage,
           id: news.id,
+          customId: customId,
           url: news.url,
         });
       }
@@ -109,18 +106,19 @@ const CostumeItemContext = ({ children }) => {
     });
   }, []);
 
-//   const removeFav = async (id) => {
-//     console.log(id)
-//     onAuthStateChanged(auth, async (user) => {
-//       if (user) {
-//           console.log("user")
-//         await deleteDoc(doc(db, "users", user.uid, "favs", id));
-//       }
-//     });
-//   };
+  const removeFav = async (id) => {
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        console.log("user");
+        await deleteDoc(doc(db, "users", user.uid, "favs", id));
+      }
+    });
+  };
 
   return (
-    <itemContext.Provider value={{ newsApi, addFav, favs,  }}>
+    <itemContext.Provider
+      value={{ newsApi, addFav, favs, removeFav, grid, setGrid }}
+    >
       {children}
     </itemContext.Provider>
   );

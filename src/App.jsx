@@ -8,6 +8,7 @@ import SignUp from "./pages/userAuth/SignUp";
 import NewsDetail from "./pages/newsDetail/NewsDetail";
 import Fav from "./component/modal/Fav";
 import { CostumeItemContext } from "./context/useContext.jsx";
+import Grids from "./component/grid/Grids.jsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               path="/"
               element={
                 <>
+                  <Grids />
                   <Home />
                 </>
               }
@@ -36,6 +38,7 @@ function App() {
               path="/fav"
               element={
                 <>
+                  <Grids />
                   <Fav />
                 </>
               }

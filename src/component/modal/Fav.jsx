@@ -16,8 +16,7 @@ const Fav = () => {
   const nextPage = (id) => {
     navigate(`/${id}`);
   };
-  const { favs, removeFav } = useValue();
-  const [grid, setGrid] = useState(false);
+  const { favs, removeFav, grid } = useValue();
 
   return (
     <div className="newsList">
@@ -41,7 +40,10 @@ const Fav = () => {
                     Read More
                   </Button>
                 </Card.Body>
-                <button className="addFav" onClick={() => removeFav(news.id)}>
+                <button
+                  className="addFav"
+                  onClick={() => removeFav(news.customId)}
+                >
                   <FaHeart />
                 </button>
               </Card>

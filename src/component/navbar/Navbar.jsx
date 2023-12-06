@@ -27,8 +27,8 @@ const Navbars = () => {
   };
 
   const showFav = () => {
-    console.log("object")
-    navigate('/fav')
+    console.log("object");
+    navigate("/fav");
   };
   return (
     <Navbar expand="lg" className="bg-primary">
@@ -48,10 +48,13 @@ const Navbars = () => {
             {/* ---------- */}
             {user ? (
               <>
-                <Nav className="m-2 text-danger " onClick={showFav}>
-                  <FaHeart />
+                <Nav className="m-2 text-danger pointer " onClick={showFav}>
+                  <li>
+                    {" "}
+                    Favirate <FaHeart />
+                  </li>
                 </Nav>
-                <Nav className="m-2 text-danger" onClick={logout}>
+                <Nav className="m-2 text pointer" onClick={logout}>
                   Logout
                 </Nav>
               </>
@@ -61,13 +64,13 @@ const Navbars = () => {
                   className=" pointer m-2 text-light"
                   onClick={() => navigate("/signin")}
                 >
-                  sign in
+                  Sign In
                 </Nav>
                 <Nav
                   className="pointer m-2 text-light"
                   onClick={() => navigate("/signup")}
                 >
-                  sign up
+                  Sign Up
                 </Nav>
               </>
             )}
